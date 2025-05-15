@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
 
+type ThemeMode = "light" | "dark" | "system";
+type Language = "en" | "es";
+
 const getStored = <T extends string>(key: string, fallback: T): T => {
     const stored = localStorage.getItem(key);
     return (stored as T) || fallback;
 };
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-const ThemeIcon = ({ theme }: { theme: "light" | "dark" | "system" }) => {
+const ThemeIcon = ({ theme }: { theme: ThemeMode }) => {
     const [animating, setAnimating] = useState(false);
+    const isDarkMode = theme === 'dark' || (theme === 'system' && prefersDark);
 
     useEffect(() => {
         setAnimating(true);
@@ -19,9 +24,7 @@ const ThemeIcon = ({ theme }: { theme: "light" | "dark" | "system" }) => {
         <img
             src={iconSrc}
             alt="Theme icon"
-            className={`h-6 w-6 transition-transform duration-300 ease-out scale-100 hover:scale-110 ${
-                animating ? 'animate-[var(--animate-icon-change)]' : ''
-            }`}
+            className={`h-6 w-6 transition-transform duration-300 ease-out scale-100 hover:scale-110 ${animating ? 'animate-[var(--animate-icon-change)]' : ''}${isDarkMode ? 'filter invert brightness-000 contrast-200' : ''}`}
         />
     );
 };
@@ -30,20 +33,20 @@ const ThemeOption = ({
     value,
     onClick,
 }: {
-    value: "light" | "dark" | "system";
+    value: ThemeMode;
     onClick: () => void;
 }) => (
     <button
         onClick={onClick}
-        className="px-4 py-2 hover:bg-gray-100 rounded w-full text-left"
+        className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded w-full text-left"
     >
         {value.charAt(0).toUpperCase() + value.slice(1)}
     </button>
 );
 
 export const Navbar = () => {
-    const [language, setLanguage] = useState<"en" | "es">(getStored("language", "en"));
-    const [theme, setTheme] = useState<"light" | "dark" | "system">(getStored("theme", "light"));
+    const [language, setLanguage] = useState<Language>(getStored("language", "en"));
+    const [theme, setTheme] = useState<ThemeMode>(getStored("theme", "light"));
     const [showThemeModal, setShowThemeModal] = useState(false);
 
     useEffect(() => {
@@ -59,7 +62,6 @@ export const Navbar = () => {
         } else if (theme === "light") {
             html.classList.remove("dark");
         } else {
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
             html.classList.toggle("dark", prefersDark);
         }
     }, [theme]);
@@ -68,17 +70,17 @@ export const Navbar = () => {
         setLanguage(lang => (lang === "es" ? "en" : "es"));
     };
 
-    const handleThemeChange = (newTheme: "light" | "dark" | "system") => {
+    const handleThemeChange = (newTheme: ThemeMode) => {
         setTheme(newTheme);
         setShowThemeModal(false);
     };
 
     return (
-        <nav className="w-full flex items-center justify-center px-8 py-4 space-x-5">
+        <nav className="w-full flex items-center justify-center px-8 py-4 space-x-5 bg-zinc-100 text-zinc-800 dark:bg-gray-900 dark:text-zinc-100">
             <ul className="flex space-x-5 text-sm font-medium">
                 {["experience", "projects", "about", "contact"].map(section => (
                     <li key={section}>
-                        <a href={`#${section}`} className="hover:text-sky-600 capitalize">
+                        <a href={`#${section}`} className="hover:text-sky-600 dark:hover:text-sky-700 capitalize">
                             {section}
                         </a>
                     </li>
@@ -86,7 +88,7 @@ export const Navbar = () => {
             </ul>
 
             <div className="flex items-center space-x-4 text-sm font-semibold relative min-w-[100px]">
-                <button onClick={toggleLanguage} className="hover:text-sky-600 font-bold" data-lang={language}>
+                <button onClick={toggleLanguage} className="hover:text-sky-600 dark:hover:text-sky-700 font-bold" data-lang={language}>
                     en/es
                 </button>
 
@@ -95,7 +97,7 @@ export const Navbar = () => {
                 </button>
 
                 {showThemeModal && (
-                    <div className="absolute top-10 right-0 bg-white white:bg-gray-800 shadow-lg rounded-lg p-5 z-50 w-32 animate-[var(--animate-fade-in-scale)]">
+                    <div className="absolute top-10 right-0 shadow-lg rounded-lg p-5 z-50 w-32 animate-[var(--animate-fade-in-scale)] bg-zinc-100 text-zinc-800 dark:bg-slate-800 dark:text-zinc-100">
                         <ThemeOption value="light" onClick={() => handleThemeChange("light")} />
                         <ThemeOption value="dark" onClick={() => handleThemeChange("dark")} />
                         <ThemeOption value="system" onClick={() => handleThemeChange("system")} />

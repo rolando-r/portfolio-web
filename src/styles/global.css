@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
   --animate-icon-change: icon-change 0.2s ease-out;
