@@ -6,12 +6,22 @@ const getStored = <T extends string>(key: string, fallback: T): T => {
 };
 
 const ThemeIcon = ({ theme }: { theme: "light" | "dark" | "system" }) => {
+    const [animating, setAnimating] = useState(false);
+
+    useEffect(() => {
+        setAnimating(true);
+        const timeout = setTimeout(() => setAnimating(false), 200); // Duration of the animation
+        return () => clearTimeout(timeout);
+    }, [theme]);
+
     const iconSrc = `/icons/${theme}_mode.svg`;
     return (
         <img
             src={iconSrc}
             alt="Theme icon"
-            className="h-6 w-6 transition-transform duration-300 ease-out scale-100 hover:scale-110"
+            className={`h-6 w-6 transition-transform duration-300 ease-out scale-100 hover:scale-110 ${
+                animating ? 'animate-[var(--animate-icon-change)]' : ''
+            }`}
         />
     );
 };
@@ -76,7 +86,7 @@ export const Navbar = () => {
             </ul>
 
             <div className="flex items-center space-x-4 text-sm font-semibold relative min-w-[100px]">
-                <button onClick={toggleLanguage} className="hover:text-sky-600" data-lang={language}>
+                <button onClick={toggleLanguage} className="hover:text-sky-600 font-bold" data-lang={language}>
                     en/es
                 </button>
 
@@ -85,7 +95,7 @@ export const Navbar = () => {
                 </button>
 
                 {showThemeModal && (
-                    <div className="absolute top-10 right-0 bg-white white:bg-gray-800 shadow-lg rounded-lg p-5 z-50 w-32">
+                    <div className="absolute top-10 right-0 bg-white white:bg-gray-800 shadow-lg rounded-lg p-5 z-50 w-32 animate-[var(--animate-fade-in-scale)]">
                         <ThemeOption value="light" onClick={() => handleThemeChange("light")} />
                         <ThemeOption value="dark" onClick={() => handleThemeChange("dark")} />
                         <ThemeOption value="system" onClick={() => handleThemeChange("system")} />
