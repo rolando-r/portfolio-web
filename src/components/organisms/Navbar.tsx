@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from "react-i18next";
 
 type ThemeMode = "light" | "dark" | "system";
 type Language = "en" | "es";
@@ -24,18 +25,14 @@ const ThemeIcon = ({ theme }: { theme: ThemeMode }) => {
         <img
             src={iconSrc}
             alt="Theme icon"
-            className={`h-6 w-6 transition-transform duration-300 ease-out scale-100 hover:scale-110 ${animating ? 'animate-[var(--animate-icon-change)]' : ''}${isDarkMode ? 'filter invert brightness-000 contrast-200' : ''}`}
+            className={`h-6 w-6 transition-transform duration-300 ease-out scale-100 hover:scale-110 
+            ${animating ? 'animate-[var(--animate-icon-change)]' : ''}
+            ${isDarkMode ? 'filter invert brightness-000 contrast-200' : ''}`}
         />
     );
 };
 
-const ThemeOption = ({
-    value,
-    onClick,
-}: {
-    value: ThemeMode;
-    onClick: () => void;
-}) => (
+const ThemeOption = ({ value, onClick }: { value: ThemeMode; onClick: () => void }) => (
     <button
         onClick={onClick}
         className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded w-full text-left"
@@ -45,29 +42,30 @@ const ThemeOption = ({
 );
 
 export const Navbar = () => {
-    const [language, setLanguage] = useState<Language>(getStored("language", "en"));
+    const { t, i18n } = useTranslation();
+    const [language, setLanguage] = useState<Language>(() => {
+        const storedLang = getStored("language", "en");
+        i18n.changeLanguage(storedLang);
+        return storedLang;
+    });
     const [theme, setTheme] = useState<ThemeMode>(getStored("theme", "light"));
     const [showThemeModal, setShowThemeModal] = useState(false);
 
     useEffect(() => {
         localStorage.setItem("language", language);
+        i18n.changeLanguage(language);
     }, [language]);
 
     useEffect(() => {
         localStorage.setItem("theme", theme);
-
         const html = document.documentElement;
-        if (theme === "dark") {
-            html.classList.add("dark");
-        } else if (theme === "light") {
-            html.classList.remove("dark");
-        } else {
-            html.classList.toggle("dark", prefersDark);
-        }
+        html.classList.toggle("dark", theme === "dark" || (theme === "system" && prefersDark));
     }, [theme]);
 
     const toggleLanguage = () => {
-        setLanguage(lang => (lang === "es" ? "en" : "es"));
+        const newLang = language === "en" ? "es" : "en";
+        setLanguage(newLang);
+        i18n.changeLanguage(newLang);
     };
 
     const handleThemeChange = (newTheme: ThemeMode) => {
@@ -78,17 +76,17 @@ export const Navbar = () => {
     return (
         <nav className="w-full flex items-center justify-center px-8 py-4 space-x-5 bg-zinc-100 text-zinc-800 dark:bg-gray-900 dark:text-zinc-100">
             <ul className="flex space-x-5 text-sm font-medium">
-                {["experience", "projects", "about", "contact"].map(section => (
+                {["navbarExperience", "navbarProjects", "navbarAbout", "navbarContact"].map(section => (
                     <li key={section}>
                         <a href={`#${section}`} className="hover:text-sky-600 dark:hover:text-sky-700 capitalize">
-                            {section}
+                            {t(section)}
                         </a>
                     </li>
                 ))}
             </ul>
 
             <div className="flex items-center space-x-4 text-sm font-semibold relative min-w-[100px]">
-                <button onClick={toggleLanguage} className="hover:text-sky-600 dark:hover:text-sky-700 font-bold" data-lang={language}>
+                <button onClick={toggleLanguage} className="hover:text-sky-600 dark:hover:text-sky-700 font-bold">
                     en/es
                 </button>
 

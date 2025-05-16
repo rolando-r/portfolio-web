@@ -1,0 +1,14 @@
+{
+  "perfil": "Full Stack Developer",
+  "greeting": "Hi, I am Rolando",
+  "description": "from Colombia with a strong focus on backend development. Passionate about building robust and scalable web applications with modern technologies.",
+  "contact": "Contact Me",
+  "experience": "+1 year of experience.",
+  "buttom": "Open to new opportunities",
+
+  "navbarExperience": "experience",
+  "navbarProjects": "projects",
+  "navbarAbout": "about me",
+  "navbarContact": "contact",
+  "contactMe": "Contact me"
+}
