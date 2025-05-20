@@ -28,3 +28,81 @@
     }
   }
 }
+
+@keyframes snake-border {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes snake-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes snake-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.snake-button-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 9999px;
+  background-color: #d1fae5;
+  color: #065f46;
+  font-weight: 500;
+  text-decoration: none;
+  z-index: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.snake-button-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  padding: 1px;
+  background: linear-gradient(90deg, #10b981, #045700, #10b981);
+  background-size: 200% 200%;
+  animation: snake-border 4s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark .snake-button-link {
+  background-color: #064e3b;
+  color: #a7f3d0;
+}
+
+.dark .snake-button-link::before {
+  background: linear-gradient(90deg, #22c55e, #159e0e, #22c55e);
+  background-size: 200% 200%;
+  animation: snake-border 4s linear infinite;
+}
+
+@keyframes snake-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}

@@ -1,19 +1,26 @@
 import { useTranslation } from "react-i18next";
 
 export const HeroSection = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="flex flex-col items-center text-center px-4 py-16">
       <img
-        src="/icons/photo.webp"
+        src="/photo.webp"
         alt="Rolando"
         className="rounded-full w-32 h-32 object-cover mb-4"
       />
-      <span className="px-3 py-1 text-sm border border-green-400 text-green-500 rounded-full mb-4">
-        {t("buttom")}
-      </span>
-      <h1 className="text-4xl font-bold mb-2">{t("greeting")}</h1>
+      <div className="snake-button mb-4">
+        <a
+          href="https://www.linkedin.com/in/rolando-rodriguez-garcia/"
+          className="snake-button-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t("buttom")}
+        </a>
+      </div>
+      <h1 className="text-4xl font-bold mb-2 text-zinc-800 dark:text-zinc-100">{t("greeting")}</h1>
       <p className="text-gray-600 dark:text-gray-300 max-w-xl mb-6">
         {t("experience")} <span className="font-bold text-blue-600">{t("perfil")}</span> {t("description")}
       </p>
