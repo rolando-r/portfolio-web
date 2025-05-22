@@ -4,7 +4,6 @@ This is my personal portfolio built with **React**, **TailwindCSS**, and **i18ne
 
 ## ✨ Features
 
-- Responsive and accessible design
 - Multi-language support with `i18next`
 - Custom hover animations using Tailwind and CSS
 - Buttons for email, GitHub, and LinkedIn
