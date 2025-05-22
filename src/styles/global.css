@@ -66,15 +66,21 @@
   font-weight: 500;
   text-decoration: none;
   z-index: 0;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+  will-change: transform;
 }
+
+.snake-button-link:hover {
+  transform: scale(1.03);
+}
+
 
 .snake-button-link::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  padding: 1px;
+  padding: 1.5px;
   background: linear-gradient(90deg, #10b981, #045700, #10b981);
   background-size: 200% 200%;
   animation: snake-border 4s linear infinite;
