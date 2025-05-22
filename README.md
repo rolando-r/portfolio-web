@@ -42,4 +42,7 @@ Made with ❤️ by [Rolando Rodríguez](https://www.linkedin.com/in/rolando-rod
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is not open-source.
+
+You may view the code and use it for learning or inspiration only.  
+All rights reserved © 2025 Rolando Rodríguez.
