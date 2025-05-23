@@ -76,7 +76,7 @@ export const Navbar = () => {
     return (
         <nav className="w-full flex items-center justify-center px-8 py-4 space-x-5 bg-zinc-100 text-zinc-800 dark:bg-gray-900 dark:text-zinc-100">
             <ul className="flex space-x-5 text-sm font-medium">
-                {["navbarExperience", "navbarProjects", "navbarAbout", "navbarContact"].map(section => (
+                {["experience", "projects", "about", "contact"].map(section => (
                     <li key={section}>
                         <a href={`#${section}`} className="hover:text-sky-600 dark:hover:text-sky-700 capitalize">
                             {t(section)}

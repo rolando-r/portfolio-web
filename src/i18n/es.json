@@ -2,15 +2,14 @@
   "perfil": "Desarrollador Full Stack",
   "greeting": "Hola, soy Rolando",
   "description": "de Colombia con un enfoque sólido en el desarrollo backend. Apasionado por construir aplicaciones web robustas y escalables con tecnologías modernas.",
-  "contact": "Contáctame",
-  "experience": "+1 año de experiencia.",
+  "contactMe": "Contáctame",
+  "experienceYears": "+1 año de experiencia.",
   "buttom": "Disponible para nuevas oportunidades",
 
-  "navbarExperience": "experiencia",
-  "navbarProjects": "proyectos",
-  "navbarAbout": "sobre mí",
-  "navbarContact": "contacto",
-  "contactMe": "Contáctame",
+  "experience": "experiencia",
+  "projects": "proyectos",
+  "about": "sobre mí",
+  "contact": "contacto",
 
   "footer": "🚧 Este portafolio aún está en desarrollo. ¡Pronto añadire más secciones y proyectos!"
 }
