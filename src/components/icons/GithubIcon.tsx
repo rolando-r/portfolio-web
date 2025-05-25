@@ -8,7 +8,7 @@ export const GithubIcon = () => (
         fill="currentColor"
     >
         <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59
               .4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49
               -2.01.37-2.53-.49-2.69-.94

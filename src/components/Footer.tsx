@@ -4,8 +4,36 @@ export const Footer = () => {
     const { t } = useTranslation();
 
     return (
-        <p className="mt-4 bg-yellow-100 dark:bg-yellow-700 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-lg text-center font-medium shadow-sm">
-            {t("footer")}
-        </p>
+        <div className="mt-4 bg-zinc-200 dark:bg-gray-950 text-zinc-800 dark:text-zinc-100 px-4 py-3 rounded-lg shadow-sm text-sm">
+            <div className="flex flex-wrap justify-center items-center gap-6 text-center">
+                <span className="font-medium">{t("footer")}</span>
+                <div className="flex gap-4">
+                    <a
+                        href="https://linkedin.com/in/rolando-rodriguez-garcia/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline font-medium"
+                    >
+                        LinkedIn
+                    </a>
+                    <a
+                        href="mailto:roolandoorg@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline font-medium"
+                    >
+                        {t("contact")}
+                    </a>
+                    <a
+                        href="https://github.com/rolando-r"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline font-medium"
+                    >
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
     )
 }

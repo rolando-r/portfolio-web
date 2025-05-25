@@ -1,7 +1,7 @@
 {
   "perfil": "Full Stack Developer",
   "greeting": "Hi, I am Rolando",
-  "description": "from Colombia with a strong focus on backend development. Passionate about building robust and scalable web applications with modern technologies.",
+  "description": "from Colombia with a strong focus on application development. Passionate about building robust and scalable web and mobile applications using modern technologies.",
   "contactMe": "Contact Me",
   "experienceYears": "+1 year of experience.",
   "buttom": "Open to new opportunities",
@@ -9,7 +9,13 @@
   "experience": "experience",
   "projects": "projects",
   "about": "about me",
-  "contact": "contact",
+  "contact": "Contact",
 
-  "footer": "🚧 This portfolio is still in development. More sections and projects will be added soon!"
+  "footer": "© 2025 Rolando Rodriguez. All rights reserved.",
+
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
 }
