@@ -1,6 +1,3 @@
-import { ThemeMode } from "@/types";
-
-
 interface ThemeOptionProps {
   onClick: () => void;
   children: React.ReactNode;
