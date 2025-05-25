@@ -8,7 +8,7 @@ export const NavigationLinks = () => {
         <ul className="flex space-x-5 text-sm font-medium">
             {sections.map((section) => (
                 <li key={section}>
-                    <a href="#${section}" className="hover:text-sky-600 dark:hover:text-sky-700 capitalize">
+                    <a href={`#${section}`} className="hover:text-sky-600 dark:hover:text-sky-700 capitalize">
                         {t(section)}
                     </a>
                 </li>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ThemeMode } from "@/types";
+import { LightIcon, DarkIcon, SystemIcon } from "../../icons";
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -17,15 +18,23 @@ export const ThemeIcon = ({ theme }: ThemeIconProps) => {
     return () => clearTimeout(timeout);
   }, [theme]);
 
-  const iconSrc = `/icons/${theme}_mode.svg`;
+  const IconComponent = {
+    light: LightIcon,
+    dark: DarkIcon,
+    system: SystemIcon,
+  }[theme];
 
   return (
-    <img
-      src={iconSrc}
-      alt="Theme icon"
-      className={`h-6 w-6 transition-transform duration-300 ease-out scale-100 hover:scale-110 
-        ${animating ? 'animate-[var(--animate-icon-change)]' : ''}
-        ${isDarkMode ? 'filter invert brightness-000 contrast-200' : ''}`}
+  <div
+    className={`transition-transform duration-300 ease-out
+      ${animating ? 'animate-icon-change' : ''}
+      hover:scale-110`}
+  >
+    <IconComponent
+      className={`h-6 w-6 
+        ${isDarkMode ? 'filter invert brightness-0 contrast-200' : ''}`}
     />
-  );
+  </div>
+);
+
 };
