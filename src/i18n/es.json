@@ -17,5 +17,24 @@
     "light": "Claro",
     "dark": "Oscuro",
     "system": "Sistema"
+  },
+
+  "workExperience": {
+    "title": "Experiencia Laboral",
+    "jobs": [
+      {
+        "title": "Analista de Software",
+        "company": "Wiedii",
+        "date": "Septiembre 2024 - Actualidad",
+        "description": "En Wiedii, lideré el desarrollo de soluciones seguras y escalables, implementando autenticación multifactor con AWS Cognito y Redis bajo estándares HIPAA, y optimizando la base de datos para mejorar significativamente el rendimiento. Estandaricé entornos con Docker y diseñé sistemas de control de errores que garantizaron alta disponibilidad y soporte para miles de usuarios concurrentes en múltiples entornos."
+      },
+      {
+        "title": "Desarrollador Full Stack",
+        "company": "Campuslands",
+        "date": "Enero 2023 - Diciembre 2023",
+        "description": "En Campuslands, desarrollé aplicaciones full stack con .NET, JavaScript, MySQL y MongoDB, aplicando arquitectura en capas y autenticación JWT. Mi enfoque en escalabilidad y rendimiento me llevó a ganar el primer lugar en el Hackathon SOFTIC 2023, destacándome en la creación de soluciones digitales innovadoras y funcionales bajo presión."
+      }
+    ]
   }
+
 }

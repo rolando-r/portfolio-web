@@ -1,5 +1,5 @@
 import './styles/global.css';
-import { HeroSection, Navbar, Footer } from './components';
+import { HeroSection, Navbar, Footer, WorkExperience } from './components';
 import i18n from './i18n/i18n';
 
 const storedLang = localStorage.getItem("language") || "en";
@@ -11,6 +11,7 @@ function App() {
       <main className="flex-grow">
         <Navbar />
         <HeroSection />
+        <WorkExperience />
       </main>
       <Footer />
     </div>
