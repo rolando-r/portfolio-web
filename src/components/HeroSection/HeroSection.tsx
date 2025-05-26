@@ -26,7 +26,7 @@ export const HeroSection = () => {
         {t("experienceYears")} <span className="font-bold text-blue-600">{t("perfil")}</span> {t("description")}
       </p>
 
-      <div className="flex gap-4 flex-wrap">
+      <div className="flex gap-4 flex-wrap justify-center">
         <ContactButton
           href="mailto:roolandoorg@gmail.com"
           icon={<EmailIcon />}
