@@ -5,20 +5,16 @@
   "contactMe": "Contáctame",
   "experienceYears": "+1 año de experiencia.",
   "buttom": "Disponible para nuevas oportunidades",
-
   "experience": "experiencia",
   "projects": "proyectos",
   "about": "sobre mí",
   "contact": "Contacto",
-
   "footer": "© 2025 Rolando Rodriguez. Todos los derechos reservados.",
-
   "theme": {
     "light": "Claro",
     "dark": "Oscuro",
     "system": "Sistema"
   },
-
   "workExperience": {
     "title": "Experiencia Laboral",
     "jobs": [
@@ -26,7 +22,7 @@
         "title": "Analista de Software",
         "company": "Wiedii",
         "date": "Septiembre 2024 - Actualidad",
-        "description": "En Wiedii, lideré el desarrollo de soluciones seguras y escalables, implementando autenticación multifactor con AWS Cognito y Redis bajo estándares HIPAA, y optimizando la base de datos para mejorar significativamente el rendimiento. Estandaricé entornos con Docker y diseñé sistemas de control de errores que garantizaron alta disponibilidad y soporte para miles de usuarios concurrentes en múltiples entornos."
+        "description": "En Wiedii, lideré el desarrollo de soluciones seguras y escalables, implementando autenticación multifactor con AWS Cognito y Redis usando Laravel bajo estándares HIPAA, y optimizando la base de datos para mejorar significativamente el rendimiento. Estandaricé entornos con Docker y diseñé sistemas de control de errores que garantizaron alta disponibilidad y soporte para miles de usuarios concurrentes en múltiples entornos."
       },
       {
         "title": "Desarrollador Full Stack",
@@ -35,6 +31,16 @@
         "description": "En Campuslands, desarrollé aplicaciones full stack con .NET, JavaScript, MySQL y MongoDB, aplicando arquitectura en capas y autenticación JWT. Mi enfoque en escalabilidad y rendimiento me llevó a ganar el primer lugar en el Hackathon SOFTIC 2023, destacándome en la creación de soluciones digitales innovadoras y funcionales bajo presión."
       }
     ]
+  },
+  "achievements": {
+    "title": "Logros",
+    "softic": {
+      "title": "1er Puesto Hackathon Softic 2023",
+      "description": "Desarrollé el backend en .NET de una app ganadora que conectaba a los colaboradores con todas las áreas de la Zona Franca, mejorando la visibilidad y comunicación interna."
+    },
+    "awsImmune": {
+      "title": "IA Generativa AWS & Immune",
+      "description": "Microcredencial enfocada en IA generativa, prompt engineering e IA responsable. Creación de prototipos con PartyRock, aplicando mejores prácticas éticas y técnicas."
+    }
   }
-
 }
