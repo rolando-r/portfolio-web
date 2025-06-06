@@ -8,7 +8,7 @@ export const achievements = [
     {
         id: "awsImmune",
         titleKey: "achievements.awsImmune.title",
-        descriptionKey: "achievements.awsImmune.description",\
+        descriptionKey: "achievements.awsImmune.description",
         image: "/awsImmune.webp"
     }
 ]
