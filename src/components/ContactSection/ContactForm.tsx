@@ -6,6 +6,7 @@ export const ContactForm = () => {
     const formRef = useRef<HTMLFormElement>(null);
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         setTimeout(() => {
             formRef.current?.reset();
         }, 100);
