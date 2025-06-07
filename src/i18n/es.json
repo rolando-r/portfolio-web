@@ -42,5 +42,16 @@
       "title": "IA Generativa - AWS & Immune",
       "description": "Microcredencial enfocada en IA generativa, prompt engineering e IA responsable. Creación de prototipos con PartyRock, aplicando mejores prácticas éticas y técnicas."
     }
+  },
+  "contactForm": {
+    "title": "¡Envíame un mensaje!",
+    "subtitle": "¿Tienes alguna pregunta o propuesta, o solo quieres saludar? Adelante.",
+    "name": "Tu Nombre",
+    "namePlaceholder": "Ingresa tu nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "Ingresa tu dirección de correo electrónico",
+    "message": "Tu Mensaje",
+    "messagePlaceholder": "Hola, creo que necesitamos un sistema de software para nuestros productos en la Empresa X. ¿Cuándo podrías reunirte para discutir esto?",
+    "send": "ENVIAR ⭢"
   }
 }

@@ -42,5 +42,16 @@
       "title": "Generative AI - AWS & Immune",
       "description": "Microcredential focused on generative AI, prompt engineering, and responsible AI. Built prototypes using PartyRock, applying both ethical and technical best practices."
     }
+  },
+  "contactForm": {
+    "title": "Send me a message!",	
+    "subtitle": "Got a question or proposal, or just want to say hello? Go ahead.",
+    "name": "Your Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "message": "Your Message",
+    "messagePlaceholder": "Hi, I think we need a software system for our products at Company X. How soon can you hop on to discuss this?",
+    "send": "SHOOT ⭢"
   }
 }

@@ -1,5 +1,5 @@
 import './styles/global.css';
-import { HeroSection, Navbar, Footer, WorkExperience, AchievementsSection } from './components';
+import { HeroSection, Navbar, Footer, WorkExperience, AchievementsSection, ContactSection } from './components';
 import i18n from './i18n/i18n';
 import { ThemeProvider } from '@/context/ThemeContext';
 
@@ -15,6 +15,7 @@ function App() {
           <HeroSection />
           <WorkExperience />
           <AchievementsSection />
+          <ContactSection/>
         </main>
         <Footer />
       </div>
