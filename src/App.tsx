@@ -1,21 +1,24 @@
 import './styles/global.css';
 import { HeroSection, Navbar, Footer, WorkExperience, AchievementsSection } from './components';
 import i18n from './i18n/i18n';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 const storedLang = localStorage.getItem("language") || "en";
 i18n.changeLanguage(storedLang);
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
-        <Navbar />
-        <HeroSection />
-        <WorkExperience />
-        <AchievementsSection />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-grow">
+          <Navbar />
+          <HeroSection />
+          <WorkExperience />
+          <AchievementsSection />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 

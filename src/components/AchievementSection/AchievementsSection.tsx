@@ -2,9 +2,11 @@ import { AchievementCard } from ".";
 import { useTranslation } from 'react-i18next';
 import { achievements } from '../../data/achievements';
 import { AchievementIcon } from '../icons';
+import { useThemeContext } from '@/context/ThemeContext';
 
 export const AchievementsSection = () => {
     const { t } = useTranslation();
+    const { resolvedTheme } = useThemeContext();
 
     return (
         <section className="py-10 px-4 max-w-screen-lg mx-auto">
@@ -14,7 +16,7 @@ export const AchievementsSection = () => {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
                 {achievements.map((item, idx) => (
-                    <AchievementCard key={idx} {...item} />
+                    <AchievementCard key={idx} {...item} theme={resolvedTheme} />
                 ))}
             </div>
         </section>

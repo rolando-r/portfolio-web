@@ -3,16 +3,28 @@ import { useTranslation } from 'react-i18next';
 type Props = {
     titleKey: string;
     descriptionKey: string;
-    image: string;
-}
+    image?: string;
+    imageLight?: string;
+    imageDark?: string;
+    theme: "light" | "dark";
+};
 
-export const AchievementCard = ({ titleKey, descriptionKey, image }: Props) => {
+
+export const AchievementCard = ({ titleKey, descriptionKey, image, imageLight, imageDark, theme }: Props) => {
     const { t } = useTranslation();
+    const selectedImage = image ?? (theme === "dark" ? imageDark : imageLight);
+
     return (
-        <div className='max-w-xs bg-white dark:bg-gray-900 shadow-md rounded-2x1 p-4 text-center'>
-            <img src={image} alt={t(titleKey)} className='w-16 h-16 mx-auto mb-4'/>
-            <h3 className='text-lg font-semibold text-blue-600'>{t(titleKey)}</h3>
-            <p className='text-sm text-gray-600 mt-2'>{t(descriptionKey)}</p>
+        <div className='max-w-xs p-4 text-center'>
+            {selectedImage && (
+                <img
+                    src={selectedImage}
+                    alt={t(titleKey)}
+                    className='w-22 h-22 mx-auto mb-4 rounded-sm object-contain'
+                />
+            )}
+            <h3 className='text-lg font-bold text-blue-600'>{t(titleKey)}</h3>
+            <p className='text-sm text-gray-600 dark:text-zinc-100 mt-2'>{t(descriptionKey)}</p>
         </div>
     )
 }
