@@ -1,12 +1,11 @@
-import { FormEvent, useRef } from 'react';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const ContactForm = () => {
     const { t } = useTranslation();
     const formRef = useRef<HTMLFormElement>(null);
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         setTimeout(() => {
             formRef.current?.reset();
         }, 100);
