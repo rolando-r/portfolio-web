@@ -20,7 +20,10 @@ export const LanguageToggle = () => {
     }, [language, i18n]);
 
     return (
-        <button onClick={toggleLanguage} className="hover:text-sky-600 dark:hover:text-sky-700 font-bold">
+        <button 
+            onClick={toggleLanguage}
+            className="flex items-center justify-center h-4 w-12 rounded-full hover:text-blue-600 font-bold text-xs sm:text-sm transition-colors"
+        >
             en/es
         </button>
     );

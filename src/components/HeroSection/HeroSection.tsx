@@ -6,7 +6,7 @@ export const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="flex flex-col items-center text-center px-4 py-16">
+    <section id="about" className="flex flex-col items-center text-center px-4 py-16">
       <Avatar />
       <div className="snake-button mb-4">
         <a

@@ -7,7 +7,7 @@ export const WorkExperience = () => {
   const experiences = t("workExperience.jobs", { returnObjects: true });
 
   return (
-    <section id="work-experience" className="py-10 px-4 max-w-screen-lg mx-auto">
+    <section id="experience" className="py-10 px-4 max-w-screen-lg mx-auto">
       <h2 className="flex items-center text-2xl font-bold mb-2 text-zinc-800 dark:text-zinc-100 pb-5">
         <PortfolioIcon className="w-7 h-8 mr-2" />
         {t("workExperience.title")}
