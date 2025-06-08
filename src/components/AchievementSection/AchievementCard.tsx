@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 type Props = {
     titleKey: string;
@@ -24,7 +24,12 @@ export const AchievementCard = ({ titleKey, descriptionKey, image, imageLight, i
                 />
             )}
             <h3 className='text-lg font-bold text-blue-600'>{t(titleKey)}</h3>
-            <p className='text-sm text-gray-600 dark:text-zinc-100 mt-2'>{t(descriptionKey)}</p>
+            <p className='text-sm text-gray-600 dark:text-zinc-100 mt-2'>
+                <Trans
+                    i18nKey={descriptionKey}
+                    components={{ blue: <span className="text-blue-600 font-semibold" /> }}
+                />
+            </p>
         </div>
     )
 }

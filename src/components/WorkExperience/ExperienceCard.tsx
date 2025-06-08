@@ -1,10 +1,11 @@
 import { FC } from "react";
+import { Trans } from "react-i18next";
 
 interface ExperienceCardProps {
   title: string;
   company: string;
   date: string;
-  description: string;
+  index: number;
   isLast?: boolean;
 }
 
@@ -12,7 +13,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
   title,
   company,
   date,
-  description,
+  index,
   isLast = false,
 }) => {
   return (
@@ -32,7 +33,12 @@ const ExperienceCard: FC<ExperienceCardProps> = ({
           <p className="text-sm text-zinc-500 dark:text-zinc-50 font-medium">{date}</p>
         </div>
         <div className="flex-1">
-          <p className="mt-2 text-zinc-800 dark:text-zinc-100">{description}</p>
+          <p className="mt-2 text-zinc-800 dark:text-zinc-100">
+            <Trans
+              i18nKey={`workExperience.jobs.${index}.description`}
+              components={{ blue: <span className="text-blue-600 font-semibold" />, }}
+            />
+          </p>
         </div>
       </div>
     </div>

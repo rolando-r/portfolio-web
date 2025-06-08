@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import ExperienceCard from "./ExperienceCard";
 import { PortfolioIcon } from "../icons";
 
@@ -17,10 +17,10 @@ export const WorkExperience = () => {
           experiences.map((exp, index) => (
             <ExperienceCard
               key={index}
+              index={index}
               title={exp.title}
               company={exp.company}
               date={exp.date}
-              description={exp.description}
             />
           ))}
       </div>

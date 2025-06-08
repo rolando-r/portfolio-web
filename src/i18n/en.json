@@ -22,13 +22,13 @@
         "title": "Software Analyst",
         "company": "Wiedii",
         "date": "September 2025 - Currently",
-        "description": "At Wiedii, I led the development of secure and scalable solutions, implementing multi-factor authentication with AWS Cognito and Redis using Laravel under HIPAA standards, and optimizing the database to significantly improve performance. I standardized environments using Docker and designed error-handling systems that ensured high availability and support for thousands of concurrent users across multiple environments."
+        "description": "At Wiedii, I led the development of secure and scalable solutions, implementing <blue>multi-factor</blue> authentication with <blue>AWS</blue> Cognito and <blue>Redis</blue> using <blue>Laravel</blue> under HIPAA standards, and optimizing the database to significantly improve performance. I <blue>standardized</blue> environments using <blue>Docker</blue> and designed error-handling systems that ensured high availability and support for thousands of concurrent users across multiple environments."
       },
       {
         "title": "Full Stack Developer",
         "company": "Campuslands",
         "date": "January 2023 - December 2023",
-        "description": "At Campuslands, I developed full stack applications using .NET, JavaScript, MySQL, and MongoDB, applying layered architecture and JWT authentication. My focus on scalability and performance led me to win first place at the SOFTIC 2023 Hackathon, standing out for building innovative and functional digital solutions under pressure."
+        "description": "At Campuslands, I developed full stack applications using <blue>.NET</blue>, <blue>JavaScript</blue>, <blue>MySQL</blue>, and <blue>MongoDB</blue>, applying layered architecture and <blue>JWT authentication</blue>. My focus on scalability and performance led me to win first place at the SOFTIC 2023 Hackathon, standing out for building innovative and functional digital solutions <blue>under pressure.</blue>"
       }
     ]
   },
@@ -36,11 +36,11 @@
     "title": "Achievements",
     "softic": {
       "title": "1st Place Softic Hackathon 2023",
-      "description": "Developed the backend in .NET for an award-winning app that connected employees with all areas of the Zona Franca, enhancing internal visibility and communication."
+      "description": "Developed the backend in <blue>.NET</blue> for an award-winning app that connected employees with all areas of the Zona Franca, <blue>enhancing</blue> internal visibility and communication."
     },
     "awsImmune": {
       "title": "Generative AI - AWS & Immune",
-      "description": "Microcredential focused on generative AI, prompt engineering, and responsible AI. Built prototypes using PartyRock, applying both ethical and technical best practices."
+      "description": "Microcredential focused on <blue>generative AI</blue>, prompt engineering, and responsible AI. Built prototypes using <blue>PartyRock</blue>, applying both ethical and technical best practices."
     }
   },
   "contactForm": {
